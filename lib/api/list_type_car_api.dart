@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-Future<List<dynamic>?> ListTypeCarApi () async {
+Future<List<dynamic>?> listTypeCarApi () async {
   try {
     final http.Response result = await http.get(
       Uri.parse('https://fn-fe-evaluacion-personal.azurewebsites.net/api/auto/modelo'),
@@ -15,4 +15,5 @@ Future<List<dynamic>?> ListTypeCarApi () async {
       return json.decode(result.body);
     }
   } catch (_) {}
+  return null;
 }

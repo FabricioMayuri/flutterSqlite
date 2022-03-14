@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,7 +39,7 @@ class HomeController extends GetxController {
 
     types = await dbHelper.queryAllRowsTypeCar();
     if(types!.isEmpty){
-      List<dynamic>? inserttypes = await ListTypeCarApi();
+      List<dynamic>? inserttypes = await listTypeCarApi();
       if(inserttypes != null){
         for (var row in inserttypes) {
           await dbHelper.inserTypeCar(row);
@@ -51,13 +49,10 @@ class HomeController extends GetxController {
         Get.snackbar('Ocurrió un error', 'Error al consultar');
       }
     }
-
-    print(types);
   }
 
   void getCars() async {
     cars = await dbHelper.queryAllRowsCar();
-    print(cars);
     update(['listCars']);
   }
 
