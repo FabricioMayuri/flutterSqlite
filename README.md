@@ -1,4 +1,4 @@
-# pruebatecnica
+# FlutterSQLITE
 
 A new Flutter project.
 
